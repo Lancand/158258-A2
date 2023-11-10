@@ -1,0 +1,77 @@
+﻿@model IEnumerable<GilBard.Models.shopping>
+<!--Games Area Start-->
+<div class="games-area section pt-lg-65 pt-md-55 pt-sm-55 pt-xs-45">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!--Game Toolbar Start-->
+                <div class="game-topbar-wrapper d-md-flex justify-content-md-between align-items-center">
+                    <form action="" method="get">
+
+                        <div class="toolbar-short-area d-md-flex align-items-center" style="float:left;margin-right:30px;">
+                            <div class="toolbar-shorter">
+                                <h3>GAME ORDER</h3>
+                                <select class="wide" name="order">
+                                    @if (Request.QueryString["order"] != null && Request.QueryString["order"].Equals("asc"))
+                                    {
+                                        <option value="asc">Positive sequence</option>
+                                        <option value="desc">Reverse order</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="desc">Reverse order</option>
+                                        <option value="asc">Positive sequence</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="game-search-box">
+                            <h3>Search Games</h3>
+                            <input type="text" name="keyword" value="@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"" )" placeholder="Please Input Games name">
+                            <button><i class="icofont-search-2"></i></button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!--Game Toolbar End-->
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-game mb-50">
+                        <div class="game-img">
+                            <a href="/Home/GameDetail?id=@item.id"><img src="@item.img" width="370" height="248" alt=""></a>
+                        </div>
+                        <div class="game-content">
+                            <h4><a href="/Home/GameDetail?id=@item.id">@item.title</a></h4>
+                            <span>@item.category.catename/￥@(item.sale_price)</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="blog-pagination text-center">
+                    <ul class="page-pagination">
+                        @if (ViewBag.pageNum == null | ViewBag.pageNum == 0)
+                        {
+                            <li>
+                                <a href="?page=1&order=@(Request.QueryString["order"] != null ? Request.QueryString["order"] : "desc")&cid=@(Request.QueryString["cid"] != null ? Request.QueryString["cid"] : "")&keyword=@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"] : "")">1</a>
+                            </li>
+                        }
+                        @for (var i = 1; i <= ViewBag.pageNum; i++)
+                        {
+                            <li>
+                                <a href="?page=@i&order=@(Request.QueryString["order"] != null ? Request.QueryString["order"] : "desc")&cid=@(Request.QueryString["cid"] != null ? Request.QueryString["cid"] : "")&keyword=@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"] : "")">@i</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Games Area End-->

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GameMallModelStoreContainer" CdmEntityContainer="GameMallEntities">
+    <EntitySetMapping Name="admin">
+      <EntityTypeMapping TypeName="GameMallModel.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="power" ColumnName="power" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="category">
+      <EntityTypeMapping TypeName="GameMallModel.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="catename" ColumnName="catename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comment">
+      <EntityTypeMapping TypeName="GameMallModel.comment">
+        <MappingFragment StoreEntitySet="comment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="shop_id" ColumnName="shop_id" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="forums">
+      <EntityTypeMapping TypeName="GameMallModel.forums">
+        <MappingFragment StoreEntitySet="forums">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="message">
+      <EntityTypeMapping TypeName="GameMallModel.message">
+        <MappingFragment StoreEntitySet="message">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order">
+      <EntityTypeMapping TypeName="GameMallModel.order">
+        <MappingFragment StoreEntitySet="order">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="order_num" ColumnName="order_num" />
+          <ScalarProperty Name="sum_price" ColumnName="sum_price" />
+          <ScalarProperty Name="mark" ColumnName="mark" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="is_pay" ColumnName="is_pay" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="pay_way" ColumnName="pay_way" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order_detail">
+      <EntityTypeMapping TypeName="GameMallModel.order_detail">
+        <MappingFragment StoreEntitySet="order_detail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="sum_price" ColumnName="sum_price" />
+          <ScalarProperty Name="shop_id" ColumnName="shop_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="shopping">
+      <EntityTypeMapping TypeName="GameMallModel.shopping">
+        <MappingFragment StoreEntitySet="shopping">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="sale_price" ColumnName="sale_price" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="shop_number" ColumnName="shop_number" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="game_download" ColumnName="game_download" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="state">
+      <EntityTypeMapping TypeName="GameMallModel.state">
+        <MappingFragment StoreEntitySet="state">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="statename" ColumnName="statename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user">
+      <EntityTypeMapping TypeName="GameMallModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="introduce" ColumnName="introduce" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="img" ColumnName="img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="video">
+      <EntityTypeMapping TypeName="GameMallModel.video">
+        <MappingFragment StoreEntitySet="video">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

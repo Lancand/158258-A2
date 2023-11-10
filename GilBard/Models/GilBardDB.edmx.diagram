@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e8dcd7cf79e8415b984fc43939c26790" Name="Diagram1">
+        <EntityTypeShape EntityType="GameMallModel1.admin" Width="1.5" PointX="8.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameMallModel1.category" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameMallModel1.comment" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameMallModel1.forums" Width="1.5" PointX="5.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameMallModel1.message" Width="1.5" PointX="8.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameMallModel1.order" Width="1.5" PointX="6" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameMallModel1.order_detail" Width="1.5" PointX="8.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameMallModel1.shopping" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameMallModel1.state" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameMallModel1.user" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameMallModel1.video" Width="1.5" PointX="10.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="GameMallModel1.FK_shopping_category" ManuallyRouted="false" />
+        <AssociationConnector Association="GameMallModel1.FK_comment_shopping" ManuallyRouted="false" />
+        <AssociationConnector Association="GameMallModel1.FK_comment_user" ManuallyRouted="false" />
+        <AssociationConnector Association="GameMallModel1.FK_forums_user" ManuallyRouted="false" />
+        <AssociationConnector Association="GameMallModel1.FK_order_detail_order" ManuallyRouted="false" />
+        <AssociationConnector Association="GameMallModel1.FK_order_user" ManuallyRouted="false" />
+        <AssociationConnector Association="GameMallModel1.FK_order_detail_shopping" ManuallyRouted="false" />
+        <AssociationConnector Association="GameMallModel1.FK_shopping_state" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

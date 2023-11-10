@@ -1,0 +1,755 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GameMallModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pwd" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nickname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="power" Type="smallint" Nullable="false" />
+          <Property Name="createtime" Type="date" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="catename" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="comment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="detail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="uid" Type="int" Nullable="false" />
+          <Property Name="shop_id" Type="int" Nullable="false" />
+          <Property Name="createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="forums">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="detail" Type="text" Nullable="false" />
+          <Property Name="createtime" Type="datetime" Nullable="false" />
+          <Property Name="uid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="message">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="detail" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="createtime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="uid" Type="int" />
+          <Property Name="order_num" Type="varchar" MaxLength="150" />
+          <Property Name="sum_price" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="mark" Type="varchar" MaxLength="50" />
+          <Property Name="createtime" Type="date" />
+          <Property Name="is_pay" Type="smallint" />
+          <Property Name="state" Type="smallint" />
+          <Property Name="pay_way" Type="varchar" MaxLength="20" />
+          <Property Name="address" Type="varchar" MaxLength="250" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="order_detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="order_id" Type="int" />
+          <Property Name="count" Type="int" />
+          <Property Name="price" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="sum_price" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="shop_id" Type="int" />
+          <Property Name="title" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="shopping">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="cid" Type="int" />
+          <Property Name="price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="sale_price" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="number" Type="int" Nullable="false" />
+          <Property Name="detail" Type="text" Nullable="false" />
+          <Property Name="img" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="shop_number" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="state" Type="int" />
+          <Property Name="game_download" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="state">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="statename" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pwd" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nickname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sex" Type="smallint" />
+          <Property Name="introduce" Type="varchar" MaxLength="50" />
+          <Property Name="age" Type="int" />
+          <Property Name="img" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="video">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="rate" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="img" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="createtime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_comment_shopping">
+          <End Role="shopping" Type="Self.shopping" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="comment" Type="Self.comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="shopping">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="comment">
+              <PropertyRef Name="shop_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_comment_user">
+          <End Role="user" Type="Self.user" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="comment" Type="Self.comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="comment">
+              <PropertyRef Name="uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_forums_user">
+          <End Role="user" Type="Self.user" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="forums" Type="Self.forums" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="forums">
+              <PropertyRef Name="uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_order_detail_order">
+          <End Role="order" Type="Self.order" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="order_detail" Type="Self.order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order_detail">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_order_detail_shopping">
+          <End Role="shopping" Type="Self.shopping" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="order_detail" Type="Self.order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="shopping">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order_detail">
+              <PropertyRef Name="shop_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_order_user">
+          <End Role="user" Type="Self.user" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="order" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_shopping_category">
+          <End Role="category" Type="Self.category" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="shopping" Type="Self.shopping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="shopping">
+              <PropertyRef Name="cid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_shopping_state">
+          <End Role="state" Type="Self.state" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="shopping" Type="Self.shopping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="state">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="shopping">
+              <PropertyRef Name="state" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GameMallModel1StoreContainer">
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="comment" EntityType="Self.comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="forums" EntityType="Self.forums" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="message" EntityType="Self.message" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="order" EntityType="Self.order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="order_detail" EntityType="Self.order_detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shopping" EntityType="Self.shopping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="state" EntityType="Self.state" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="video" EntityType="Self.video" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_comment_shopping" Association="Self.FK_comment_shopping">
+            <End Role="shopping" EntitySet="shopping" />
+            <End Role="comment" EntitySet="comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_comment_user" Association="Self.FK_comment_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="comment" EntitySet="comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_forums_user" Association="Self.FK_forums_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="forums" EntitySet="forums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_order_detail_order" Association="Self.FK_order_detail_order">
+            <End Role="order" EntitySet="order" />
+            <End Role="order_detail" EntitySet="order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_order_detail_shopping" Association="Self.FK_order_detail_shopping">
+            <End Role="shopping" EntitySet="shopping" />
+            <End Role="order_detail" EntitySet="order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_order_user" Association="Self.FK_order_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="order" EntitySet="order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_shopping_category" Association="Self.FK_shopping_category">
+            <End Role="category" EntitySet="category" />
+            <End Role="shopping" EntitySet="shopping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_shopping_state" Association="Self.FK_shopping_state">
+            <End Role="state" EntitySet="state" />
+            <End Role="shopping" EntitySet="shopping" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GameMallModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nickname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="power" Type="Int16" Nullable="false" />
+          <Property Name="createtime" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="catename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="shopping" Relationship="Self.FK_shopping_category" FromRole="category" ToRole="shopping" />
+        </EntityType>
+        <EntityType Name="comment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="detail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="uid" Type="Int32" Nullable="false" />
+          <Property Name="shop_id" Type="Int32" Nullable="false" />
+          <Property Name="createtime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="shopping" Relationship="Self.FK_comment_shopping" FromRole="comment" ToRole="shopping" />
+          <NavigationProperty Name="user" Relationship="Self.FK_comment_user" FromRole="comment" ToRole="user" />
+        </EntityType>
+        <EntityType Name="forums">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createtime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="uid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="user" Relationship="Self.FK_forums_user" FromRole="forums" ToRole="user" />
+        </EntityType>
+        <EntityType Name="message">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="detail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createtime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="order_num" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="sum_price" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="mark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createtime" Type="DateTime" Precision="0" />
+          <Property Name="is_pay" Type="Int16" />
+          <Property Name="state" Type="Int16" />
+          <Property Name="pay_way" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="order_detail" Relationship="Self.FK_order_detail_order" FromRole="order" ToRole="order_detail" />
+          <NavigationProperty Name="user" Relationship="Self.FK_order_user" FromRole="order" ToRole="user" />
+        </EntityType>
+        <EntityType Name="order_detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_id" Type="Int32" />
+          <Property Name="count" Type="Int32" />
+          <Property Name="price" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="sum_price" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="shop_id" Type="Int32" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="order" Relationship="Self.FK_order_detail_order" FromRole="order_detail" ToRole="order" />
+          <NavigationProperty Name="shopping" Relationship="Self.FK_order_detail_shopping" FromRole="order_detail" ToRole="shopping" />
+        </EntityType>
+        <EntityType Name="shopping">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cid" Type="Int32" />
+          <Property Name="price" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="sale_price" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="number" Type="Int32" Nullable="false" />
+          <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="img" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="shop_number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="state" Type="Int32" />
+          <Property Name="game_download" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="category" Relationship="Self.FK_shopping_category" FromRole="shopping" ToRole="category" />
+          <NavigationProperty Name="comment" Relationship="Self.FK_comment_shopping" FromRole="shopping" ToRole="comment" />
+          <NavigationProperty Name="order_detail" Relationship="Self.FK_order_detail_shopping" FromRole="shopping" ToRole="order_detail" />
+          <NavigationProperty Name="state1" Relationship="Self.FK_shopping_state" FromRole="shopping" ToRole="state" />
+        </EntityType>
+        <EntityType Name="state">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="statename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="shopping" Relationship="Self.FK_shopping_state" FromRole="state" ToRole="shopping" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nickname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sex" Type="Int16" />
+          <Property Name="introduce" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="age" Type="Int32" />
+          <Property Name="img" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="comment" Relationship="Self.FK_comment_user" FromRole="user" ToRole="comment" />
+          <NavigationProperty Name="forums" Relationship="Self.FK_forums_user" FromRole="user" ToRole="forums" />
+          <NavigationProperty Name="order" Relationship="Self.FK_order_user" FromRole="user" ToRole="order" />
+        </EntityType>
+        <EntityType Name="video">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rate" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="img" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="url" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createtime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_shopping_category">
+          <End Role="category" Type="Self.category" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="shopping" Type="Self.shopping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="shopping">
+              <PropertyRef Name="cid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_comment_shopping">
+          <End Role="shopping" Type="Self.shopping" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="comment" Type="Self.comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="shopping">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="comment">
+              <PropertyRef Name="shop_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_comment_user">
+          <End Role="user" Type="Self.user" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="comment" Type="Self.comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="comment">
+              <PropertyRef Name="uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_forums_user">
+          <End Role="user" Type="Self.user" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="forums" Type="Self.forums" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="forums">
+              <PropertyRef Name="uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_order_detail_order">
+          <End Role="order" Type="Self.order" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="order_detail" Type="Self.order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order_detail">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_order_user">
+          <End Role="user" Type="Self.user" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="order" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_order_detail_shopping">
+          <End Role="shopping" Type="Self.shopping" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="order_detail" Type="Self.order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="shopping">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order_detail">
+              <PropertyRef Name="shop_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_shopping_state">
+          <End Role="state" Type="Self.state" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="shopping" Type="Self.shopping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="state">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="shopping">
+              <PropertyRef Name="state" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GameMallEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admin" EntityType="Self.admin" />
+          <EntitySet Name="category" EntityType="Self.category" />
+          <EntitySet Name="comment" EntityType="Self.comment" />
+          <EntitySet Name="forums" EntityType="Self.forums" />
+          <EntitySet Name="message" EntityType="Self.message" />
+          <EntitySet Name="order" EntityType="Self.order" />
+          <EntitySet Name="order_detail" EntityType="Self.order_detail" />
+          <EntitySet Name="shopping" EntityType="Self.shopping" />
+          <EntitySet Name="state" EntityType="Self.state" />
+          <EntitySet Name="user" EntityType="Self.user" />
+          <EntitySet Name="video" EntityType="Self.video" />
+          <AssociationSet Name="FK_shopping_category" Association="Self.FK_shopping_category">
+            <End Role="category" EntitySet="category" />
+            <End Role="shopping" EntitySet="shopping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_comment_shopping" Association="Self.FK_comment_shopping">
+            <End Role="shopping" EntitySet="shopping" />
+            <End Role="comment" EntitySet="comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_comment_user" Association="Self.FK_comment_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="comment" EntitySet="comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_forums_user" Association="Self.FK_forums_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="forums" EntitySet="forums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_order_detail_order" Association="Self.FK_order_detail_order">
+            <End Role="order" EntitySet="order" />
+            <End Role="order_detail" EntitySet="order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_order_user" Association="Self.FK_order_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="order" EntitySet="order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_order_detail_shopping" Association="Self.FK_order_detail_shopping">
+            <End Role="shopping" EntitySet="shopping" />
+            <End Role="order_detail" EntitySet="order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_shopping_state" Association="Self.FK_shopping_state">
+            <End Role="state" EntitySet="state" />
+            <End Role="shopping" EntitySet="shopping" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GameMallModel1StoreContainer" CdmEntityContainer="GameMallEntities1">
+          <EntitySetMapping Name="admin">
+            <EntityTypeMapping TypeName="GameMallModel1.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="nickname" ColumnName="nickname" />
+                <ScalarProperty Name="power" ColumnName="power" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="category">
+            <EntityTypeMapping TypeName="GameMallModel1.category">
+              <MappingFragment StoreEntitySet="category">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="catename" ColumnName="catename" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="comment">
+            <EntityTypeMapping TypeName="GameMallModel1.comment">
+              <MappingFragment StoreEntitySet="comment">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="shop_id" ColumnName="shop_id" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="forums">
+            <EntityTypeMapping TypeName="GameMallModel1.forums">
+              <MappingFragment StoreEntitySet="forums">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="message">
+            <EntityTypeMapping TypeName="GameMallModel1.message">
+              <MappingFragment StoreEntitySet="message">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="order">
+            <EntityTypeMapping TypeName="GameMallModel1.order">
+              <MappingFragment StoreEntitySet="order">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="order_num" ColumnName="order_num" />
+                <ScalarProperty Name="sum_price" ColumnName="sum_price" />
+                <ScalarProperty Name="mark" ColumnName="mark" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+                <ScalarProperty Name="is_pay" ColumnName="is_pay" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="pay_way" ColumnName="pay_way" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="order_detail">
+            <EntityTypeMapping TypeName="GameMallModel1.order_detail">
+              <MappingFragment StoreEntitySet="order_detail">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="sum_price" ColumnName="sum_price" />
+                <ScalarProperty Name="shop_id" ColumnName="shop_id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shopping">
+            <EntityTypeMapping TypeName="GameMallModel1.shopping">
+              <MappingFragment StoreEntitySet="shopping">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="cid" ColumnName="cid" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="sale_price" ColumnName="sale_price" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="shop_number" ColumnName="shop_number" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="game_download" ColumnName="game_download" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="state">
+            <EntityTypeMapping TypeName="GameMallModel1.state">
+              <MappingFragment StoreEntitySet="state">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="statename" ColumnName="statename" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user">
+            <EntityTypeMapping TypeName="GameMallModel1.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="nickname" ColumnName="nickname" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="introduce" ColumnName="introduce" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="img" ColumnName="img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="video">
+            <EntityTypeMapping TypeName="GameMallModel1.video">
+              <MappingFragment StoreEntitySet="video">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

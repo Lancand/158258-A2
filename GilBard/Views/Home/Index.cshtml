@@ -1,0 +1,160 @@
+﻿
+<!--slider section start-->
+<div class="hero-section section position-relative">
+    <div class="hero-slider">
+        <!--Hero Item start-->
+        <div class="hero-item hero-item-2" style="background-image: url(/assets/images/hero/hero-2.jpg)">
+            <div class="container container-1520">
+                <div class="row">
+                    <div class="col-12">
+
+                        <!--Hero Content start-->
+                        <div class="hero-content">
+                            <h1>THE WITCHER 3</h1>
+                            <h2>BETTLE BEGAN’S HERE</h2>
+                            <a class="df-btn" href="/Home/GameDetail?id=19">BUY NOW</a>
+                        </div>
+                        <!--Hero Content end-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Hero Item end-->
+        <!--Hero Item start-->
+        <div class="hero-item hero-item-2" style="background-image: url(/assets/images/hero/hero-3.jpg)">
+            <div class="container container-1520">
+                <div class="row">
+                    <div class="col-12">
+
+                        <!--Hero Content start-->
+                        <div class="hero-content">
+                            <h1>THE WITCHER 3</h1>
+                            <h2>BETTLE BEGAN’S HERE</h2>
+                            <a class="df-btn" href="/Home/GameDetail?id=19">BUY NOW</a>
+                        </div>
+                        <!--Hero Content end-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Hero Item end-->
+    </div>
+</div>
+<!--slider section end-->
+<!--Featured section start-->
+<div class="featured-section section pb-95 pb-lg-75 pb-md-65 pb-sm-55 pb-xs-45">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-12">
+                <!--Featured Title Start-->
+                <div class="featured-title">
+                    <h2>FEATURED GAMES</h2>
+                    <a href="/Home/Games">VIEW ALL GAMES</a>
+                </div>
+                <!--Featured Title End-->
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-12">
+                <div class="featured-slide">
+                    @foreach (var item in ViewBag.list1)
+                    {
+                        <div class="single-featured img-full">
+                            <a href="/Home/GameDetail?id=@item.id" title="@item.title"><img src="@item.img" alt="" width="380" height="310"></a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Featured section end-->
+<!--New Game Area Start-->
+<div class="new-game-area section pb-50 pb-lg-30 pb-md-20 pb-sm-10 pb-xs-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!--Section Title Start-->
+                <div class="section-title">
+                    <h2><span class="color-blue">NEW</span> GAMES</h2>
+                </div>
+                <!--Section Title End-->
+            </div>
+        </div>
+        <div class="row game-slide">
+            @foreach (var item in ViewBag.list2)
+            {
+        <div class="col-4">
+            <div class="single-game mb-50">
+                <div class="game-img">
+                    <a href="/Home/GameDetail?id=@item.id" title="@item.title"><img src="@item.img" width="370" height="310" alt=""></a>
+                </div>
+                <div class="game-content">
+                    <h4> <a href="/Home/GameDetail?id=@item.id">@item.title</a></h4>
+                    <span>@item.category.catename/￥@(item.sale_price)</span>
+                </div>
+            </div>
+        </div>
+            }
+        </div>
+    </div>
+</div>
+<!--New Game Area End-->
+<!--Video section start-->
+<div class="video-section section pb-135 pb-lg-115 pb-md-105 pb-sm-95 pb-xs-85">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters align-items-end">
+            <div class="col-12">
+                <div class="video-slider-active">
+                    @foreach (var item in ViewBag.list5)
+                    {
+                        <div class="single-video">
+                            <div class="video-img video-img-2">
+                                <img src="@item.img" alt="" width="507" height="310">
+                                <div class="video-content content-center">
+                                    <h3>@item.title</h3>
+                                    <a class="video-popup" href="@item.url"><i class="icofont-play-alt-2"></i> VIEW DEMO</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Video section start-->
+<!--Games Review Section Start-->
+<div class="games-review-section section pb-105 pb-lg-85 pb-md-20 pb-sm-65 pb-xs-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!--Section Title Start-->
+                <div class="section-title">
+                    <h2><span class="color-blue">GAME</span> REVIEW</h2>
+                </div>
+                <!--Section Title End-->
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in ViewBag.list4)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-games-review mb-50">
+                        <div class="review-img">
+                            <a href="/Home/GameDetail?id=@item.id" title="@item.title"><img src="@item.img" alt=""></a>
+                        </div>
+                        <div class="review-content">
+                            <h4><a href="/Home/GameDetail?id=@item.id">@item.title</a></h4>
+                            <span>@item.category.catename/￥@(item.sale_price)</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+      

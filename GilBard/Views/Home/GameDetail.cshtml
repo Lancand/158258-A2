@@ -1,0 +1,94 @@
+﻿@model GilBard.Models.shopping
+<!--Page Banner Area Start-->
+<div class="page-banner-area" style="background-image: url(@Model.img);background-size:100%;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-content text-center">
+                    <h1>@Model.title</h1>
+                    <a class="df-btn" href="/Home/Pay2?shopId=@Model.id&shopNum=1">BUY NOW</a>
+                    <ul class="page-breadcrumb">
+                        <li><a href="/">HOME</a></li>
+                        <li>GAME DETAIL</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Page Banner Area End-->
+<!--Games Details Area Start-->
+<div class="games-details-area section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-xs-45">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="game-image-gallery-wrap">
+                            <div class="game-image-large">
+                                <div class="game-image img-full">
+                                    <img src="@Model.img" alt="" width="770" height="389">
+                                </div>
+                            </div>
+                            <div class="game-description mb-45">
+                                <h3>PRICE：￥@(Model.sale_price) </h3>
+                                <p>
+                                    <a class="df-btn" href="#">BUY NOW</a>
+                                </p>
+                            </div>
+                            <div class="game-description mb-45">
+                                <h3>@Model.title</h3>
+                                <hr />
+                                @(new HtmlString(Model.detail))
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+            <div class="col-lg-4">
+                <div class="sidebar-area mt-sm-50 mt-xs-50">
+                    <!--Single Sidebar Widget Start-->
+                    <div class="single-sidebar-widget mb-45">
+                        <h3>recent post</h3>
+                        @foreach (var item in ViewBag.list1)
+                        {
+                            <div class="single-featured-game mb-20">
+                                <div class="game-img">
+                                    <a href="/Home/GameDetail?id=@item.id" title="@item.title"><img src="@item.img" alt=""></a>
+                                    <a class="game-title" href="/Home/GameDetail?id=@item.id">@item.title</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <!--Single Sidebar Widget End-->
+                    <!--Single Sidebar Widget Start-->
+                    <div class="single-sidebar-widget mb-45">
+                        <h3>popular/recomended</h3>
+                        <div class="sidebar-rc-post">
+                            <ul>
+                                @foreach (var item in ViewBag.list2)
+                                {
+                                    <li>
+                                        <div class="rc-post-thumb">
+                                            <a href="/Home/GameDetail?id=@item.id"><img src="@item.img" alt=""></a>
+                                        </div>
+                                        <div class="rc-post-content">
+                                            <h3><a href="/Home/GameDetail?id=@item.id">@item.title</a></h3>
+                                            <div class="widget-date">￥@(@item.sale_price)</div>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <!--Single Sidebar Widget End-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Games Details Area End-->
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>

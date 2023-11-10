@@ -1,0 +1,616 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6773C6FE-ACA2-49B7-AD92-CC201859E397}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GilBard</RootNamespace>
+    <AssemblyName>GilBard</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44309</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\admin.cs">
+      <DependentUpon>GilBardDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\category.cs">
+      <DependentUpon>GilBardDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\comment.cs">
+      <DependentUpon>GilBardDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\forums.cs">
+      <DependentUpon>GilBardDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GameMall.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GameMall.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GameMall.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GameMall.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GameMall.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GameMall.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GilBardDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GilBardDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GilBardDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GilBardDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GilBardDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GilBardDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\message.cs">
+      <DependentUpon>GilBardDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\order.cs">
+      <DependentUpon>GilBardDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\order_detail.cs">
+      <DependentUpon>GilBardDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shopping.cs">
+      <DependentUpon>GilBardDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\state.cs">
+      <DependentUpon>GilBardDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\user.cs">
+      <DependentUpon>GilBardDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\video.cs">
+      <DependentUpon>GilBardDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\bauhaus93.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\helper.css" />
+    <Content Include="assets\css\icofont.min.css" />
+    <Content Include="assets\css\plugins.css" />
+    <Content Include="assets\css\qanto.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\_game.css" />
+    <Content Include="assets\css\_review.css" />
+    <Content Include="assets\css\_video.css" />
+    <Content Include="assets\fonts\bauhaus93\Bauhaus93.svg" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\icofont.svg" />
+    <Content Include="assets\fonts\qanto\Qanto.svg" />
+    <Content Include="assets\fonts\qanto\Qanto_1.svg" />
+    <Content Include="assets\fonts\qanto\Qanto_2.svg" />
+    <Content Include="assets\fonts\qanto\Qanto_3.svg" />
+    <Content Include="assets\images\about\about-1.png" />
+    <Content Include="assets\images\about\about-2.jpg" />
+    <Content Include="assets\images\about\about-3.jpg" />
+    <Content Include="assets\images\about\about.png" />
+    <Content Include="assets\images\author\forum-author1.png" />
+    <Content Include="assets\images\author\forum-author2.png" />
+    <Content Include="assets\images\author\forum-author3.png" />
+    <Content Include="assets\images\author\forum-author4.png" />
+    <Content Include="assets\images\author\forum-author5.png" />
+    <Content Include="assets\images\author\forum-author6.png" />
+    <Content Include="assets\images\author\forum-author8.png" />
+    <Content Include="assets\images\banner\banner1.jpg" />
+    <Content Include="assets\images\banner\banner1.png" />
+    <Content Include="assets\images\banner\banner2.jpg" />
+    <Content Include="assets\images\banner\banner2.png" />
+    <Content Include="assets\images\banner\game-banner.jpg" />
+    <Content Include="assets\images\banner\page-banner-front.png" />
+    <Content Include="assets\images\banner\sidebar-banner1.jpg" />
+    <Content Include="assets\images\banner\sidebar-banner1.png" />
+    <Content Include="assets\images\banner\sidebar-banner2.jpg" />
+    <Content Include="assets\images\banner\sidebar-banner3.jpg" />
+    <Content Include="assets\images\banner\sidebar-banner4.jpg" />
+    <Content Include="assets\images\bg\footer-bg.jpg" />
+    <Content Include="assets\images\bg\news-bg-2.png" />
+    <Content Include="assets\images\bg\news-bg.jpg" />
+    <Content Include="assets\images\bg\page-bg-2.jpg" />
+    <Content Include="assets\images\bg\page-bg.jpg" />
+    <Content Include="assets\images\blog\blog-1.jpg" />
+    <Content Include="assets\images\blog\blog-2.jpg" />
+    <Content Include="assets\images\blog\blog-3.jpg" />
+    <Content Include="assets\images\blog\blog-4.jpg" />
+    <Content Include="assets\images\blog\blog-5.jpg" />
+    <Content Include="assets\images\blog\blog-6.jpg" />
+    <Content Include="assets\images\blog\blog-7.jpg" />
+    <Content Include="assets\images\blog\blog-8.jpg" />
+    <Content Include="assets\images\blog\blog-details-1.jpg" />
+    <Content Include="assets\images\blog\blog-large1.jpg" />
+    <Content Include="assets\images\blog\blog-large2.jpg" />
+    <Content Include="assets\images\blog\blog-large3.jpg" />
+    <Content Include="assets\images\blog\blog-large4.jpg" />
+    <Content Include="assets\images\blog\blog-list1.jpg" />
+    <Content Include="assets\images\blog\blog-list10.jpg" />
+    <Content Include="assets\images\blog\blog-list2.jpg" />
+    <Content Include="assets\images\blog\blog-list3.jpg" />
+    <Content Include="assets\images\blog\blog-list4.jpg" />
+    <Content Include="assets\images\blog\blog-list5.jpg" />
+    <Content Include="assets\images\blog\blog-list6.jpg" />
+    <Content Include="assets\images\blog\blog-list7.jpg" />
+    <Content Include="assets\images\blog\blog-list8.jpg" />
+    <Content Include="assets\images\blog\blog-list9.jpg" />
+    <Content Include="assets\images\blog\comment-1.jpg" />
+    <Content Include="assets\images\blog\comment-2.jpg" />
+    <Content Include="assets\images\favicon.ico" />
+    <Content Include="assets\images\feature\feature-1.png" />
+    <Content Include="assets\images\feature\feature-slide-1.jpg" />
+    <Content Include="assets\images\feature\feature-slide-2.jpg" />
+    <Content Include="assets\images\feature\feature-slide-3.jpg" />
+    <Content Include="assets\images\feature\feature-slide-4.jpg" />
+    <Content Include="assets\images\feature\feature-slide-5.jpg" />
+    <Content Include="assets\images\feature\feature-slide-6.jpg" />
+    <Content Include="assets\images\feature\feature-slide-7.jpg" />
+    <Content Include="assets\images\forum\forum_post.jpg" />
+    <Content Include="assets\images\gallery\forum_post.jpg" />
+    <Content Include="assets\images\gallery\gallery1.jpg" />
+    <Content Include="assets\images\gallery\gallery2.jpg" />
+    <Content Include="assets\images\gallery\gallery3.jpg" />
+    <Content Include="assets\images\gallery\gallery4.jpg" />
+    <Content Include="assets\images\game\game-large\game-large1.jpg" />
+    <Content Include="assets\images\game\game-large\game-large2.jpg" />
+    <Content Include="assets\images\game\game-large\game-large3.jpg" />
+    <Content Include="assets\images\game\game-small\game-small1.jpg" />
+    <Content Include="assets\images\game\game-small\game-small2.jpg" />
+    <Content Include="assets\images\game\game-small\game-small3.jpg" />
+    <Content Include="assets\images\game\game1.jpg" />
+    <Content Include="assets\images\game\game10.jpg" />
+    <Content Include="assets\images\game\game11.jpg" />
+    <Content Include="assets\images\game\game12.jpg" />
+    <Content Include="assets\images\game\game2.jpg" />
+    <Content Include="assets\images\game\game3-1.jpg" />
+    <Content Include="assets\images\game\game3-2.jpg" />
+    <Content Include="assets\images\game\game3-3.jpg" />
+    <Content Include="assets\images\game\game3-4.jpg" />
+    <Content Include="assets\images\game\game3.jpg" />
+    <Content Include="assets\images\game\game4.jpg" />
+    <Content Include="assets\images\game\game5.jpg" />
+    <Content Include="assets\images\game\game6.jpg" />
+    <Content Include="assets\images\game\game7.jpg" />
+    <Content Include="assets\images\game\game8.jpg" />
+    <Content Include="assets\images\game\game9.jpg" />
+    <Content Include="assets\images\hero\hero-1.jpg" />
+    <Content Include="assets\images\hero\hero-2.jpg" />
+    <Content Include="assets\images\hero\hero-3.jpg" />
+    <Content Include="assets\images\hero\hero-4.jpg" />
+    <Content Include="assets\images\hero\hero-5.jpg" />
+    <Content Include="assets\images\hero\hero-6.jpg" />
+    <Content Include="assets\images\hero\hero-7.jpg" />
+    <Content Include="assets\images\hero\hero-8.jpg" />
+    <Content Include="assets\images\hero\hero-9.jpg" />
+    <Content Include="assets\images\hero\hero-front.png" />
+    <Content Include="assets\images\hero\hero-game-font1.jpg" />
+    <Content Include="assets\images\hero\hero-game-font2.jpg" />
+    <Content Include="assets\images\hero\hero-game-font3.jpg" />
+    <Content Include="assets\images\icons\quote-left.png" />
+    <Content Include="assets\images\icons\quote-right.png" />
+    <Content Include="assets\images\instagram\instagram1.jpg" />
+    <Content Include="assets\images\instagram\instagram2.jpg" />
+    <Content Include="assets\images\instagram\instagram3.jpg" />
+    <Content Include="assets\images\instagram\instagram4.jpg" />
+    <Content Include="assets\images\instagram\instagram5.jpg" />
+    <Content Include="assets\images\instagram\instagram6.jpg" />
+    <Content Include="assets\images\install\install-1.png" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\news-latter\news-banner.png" />
+    <Content Include="assets\images\rc-img\rc-img1.jpg" />
+    <Content Include="assets\images\rc-img\rc-img2.jpg" />
+    <Content Include="assets\images\rc-img\rc-img3.jpg" />
+    <Content Include="assets\images\rc-img\rc-img4.jpg" />
+    <Content Include="assets\images\review\review1.jpg" />
+    <Content Include="assets\images\review\review2.jpg" />
+    <Content Include="assets\images\review\review3.jpg" />
+    <Content Include="assets\images\video\video-bg.jpg" />
+    <Content Include="assets\images\video\video-font.jpg" />
+    <Content Include="assets\images\video\video-front1.jpg" />
+    <Content Include="assets\images\video\video-front2.jpg" />
+    <Content Include="assets\images\video\video-front3.jpg" />
+    <Content Include="assets\images\video\video-front4.jpg" />
+    <Content Include="assets\images\video\video-thumb1.jpg" />
+    <Content Include="assets\images\video\video-thumb2.jpg" />
+    <Content Include="assets\images\video\video3-1.jpg" />
+    <Content Include="assets\images\video\video3-2.jpg" />
+    <Content Include="assets\images\video\video3-3.jpg" />
+    <Content Include="assets\images\video\video6-1.jpg" />
+    <Content Include="assets\images\video\video6-2.jpg" />
+    <Content Include="assets\images\video\video6-3.jpg" />
+    <Content Include="assets\images\video\video6-4.jpg" />
+    <Content Include="assets\images\video\video6-5.jpg" />
+    <Content Include="assets\images\video\video6-6.jpg" />
+    <Content Include="assets\images\video\video6-7.jpg" />
+    <Content Include="assets\images\video\video6-8.jpg" />
+    <Content Include="assets\img\head.png" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\plugins.js" />
+    <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets\js\vendor\jquery-1.12.4.min.js" />
+    <Content Include="assets\js\vendor\modernizr-2.8.3.min.js" />
+    <Content Include="Content\assets\css\admin.css" />
+    <Content Include="Content\assets\css\amazeui.datatables.min.css" />
+    <Content Include="Content\assets\css\amazeui.min.css" />
+    <Content Include="Content\assets\css\app.css" />
+    <Content Include="Content\assets\css\fullcalendar.min.css" />
+    <Content Include="Content\assets\css\fullcalendar.print.css" />
+    <Content Include="Content\assets\img\a5.png" />
+    <Content Include="Content\assets\img\head.png" />
+    <Content Include="Content\assets\img\k.jpg" />
+    <Content Include="Content\assets\img\logo.png" />
+    <Content Include="Content\assets\img\logoa.png" />
+    <Content Include="Content\assets\img\logob.png" />
+    <Content Include="Content\assets\img\user01.png" />
+    <Content Include="Content\assets\img\user02.png" />
+    <Content Include="Content\assets\img\user03.png" />
+    <Content Include="Content\assets\img\user04.png" />
+    <Content Include="Content\assets\img\user05.png" />
+    <Content Include="Content\assets\img\user06.png" />
+    <Content Include="Content\assets\img\user07.png" />
+    <Content Include="Content\assets\i\app-icon72x72%402x.png" />
+    <Content Include="Content\assets\i\examples\admin-chrome.png" />
+    <Content Include="Content\assets\i\examples\admin-firefox.png" />
+    <Content Include="Content\assets\i\examples\admin-ie.png" />
+    <Content Include="Content\assets\i\examples\admin-opera.png" />
+    <Content Include="Content\assets\i\examples\admin-safari.png" />
+    <Content Include="Content\assets\i\examples\adminPage.png" />
+    <Content Include="Content\assets\i\examples\blogPage.png" />
+    <Content Include="Content\assets\i\examples\landing.png" />
+    <Content Include="Content\assets\i\examples\landingPage.png" />
+    <Content Include="Content\assets\i\examples\loginPage.png" />
+    <Content Include="Content\assets\i\examples\sidebarPage.png" />
+    <Content Include="Content\assets\i\favicon.png" />
+    <Content Include="Content\assets\i\startup-640x1096.png" />
+    <Content Include="Content\assets\js\amazeui.datatables.min.js" />
+    <Content Include="Content\assets\js\amazeui.min.js" />
+    <Content Include="Content\assets\js\app.js" />
+    <Content Include="Content\assets\js\dataTables.responsive.min.js" />
+    <Content Include="Content\assets\js\echarts.min.js" />
+    <Content Include="Content\assets\js\fullcalendar.min.js" />
+    <Content Include="Content\assets\js\jquery.min.js" />
+    <Content Include="Content\assets\js\moment.js" />
+    <Content Include="Content\assets\js\theme.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\pic\0613205412.jpg" />
+    <Content Include="Content\pic\0613205847.jpg" />
+    <Content Include="Content\pic\0613213231.jpg" />
+    <Content Include="Content\pic\0614135013.png" />
+    <Content Include="Content\pic\0614141945.png" />
+    <Content Include="Content\pic\0614142154.png" />
+    <Content Include="Content\pic\0614142342.jpg" />
+    <Content Include="Content\pic\0614142500.png" />
+    <Content Include="Content\pic\0614142523.png" />
+    <Content Include="Content\pic\0614142755.png" />
+    <Content Include="Content\pic\0614142927.png" />
+    <Content Include="Content\pic\0614143315.jpg" />
+    <Content Include="Content\pic\0614143839.jpg" />
+    <Content Include="Content\pic\0614144515.jpg" />
+    <Content Include="Content\pic\0615140437.jpg" />
+    <Content Include="Content\pic\0615140500.png" />
+    <Content Include="Content\video\0614142931.mp4" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\GameMall.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GameMall.Context.cs</LastGenOutput>
+      <DependentUpon>GameMall.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\GameMall.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GameMall.edmx</DependentUpon>
+      <LastGenOutput>GameMall.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\GilBardDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GilBardDB.edmx</DependentUpon>
+      <LastGenOutput>GilBardDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\GilBardDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GilBardDB.edmx</DependentUpon>
+      <LastGenOutput>GilBardDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\GameMall.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GameMall.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\GameMall.edmx.diagram">
+      <DependentUpon>GameMall.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\assets\css\app.less" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\bauhaus93\Bauhaus93.eot" />
+    <Content Include="assets\fonts\bauhaus93\Bauhaus93.ttf" />
+    <Content Include="assets\fonts\bauhaus93\Bauhaus93.woff" />
+    <Content Include="assets\fonts\bauhaus93\Bauhaus93.woff2" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\icofont.eot" />
+    <Content Include="assets\fonts\icofont.ttf" />
+    <Content Include="assets\fonts\icofont.woff" />
+    <Content Include="assets\fonts\icofont.woff2" />
+    <Content Include="assets\fonts\qanto\Qanto.eot" />
+    <Content Include="assets\fonts\qanto\Qanto.ttf" />
+    <Content Include="assets\fonts\qanto\Qanto.woff" />
+    <Content Include="assets\fonts\qanto\Qanto.woff2" />
+    <Content Include="assets\fonts\qanto\Qanto_1.eot" />
+    <Content Include="assets\fonts\qanto\Qanto_1.ttf" />
+    <Content Include="assets\fonts\qanto\Qanto_1.woff" />
+    <Content Include="assets\fonts\qanto\Qanto_1.woff2" />
+    <Content Include="assets\fonts\qanto\Qanto_2.eot" />
+    <Content Include="assets\fonts\qanto\Qanto_2.ttf" />
+    <Content Include="assets\fonts\qanto\Qanto_2.woff" />
+    <Content Include="assets\fonts\qanto\Qanto_2.woff2" />
+    <Content Include="assets\fonts\qanto\Qanto_3.eot" />
+    <Content Include="assets\fonts\qanto\Qanto_3.ttf" />
+    <Content Include="assets\fonts\qanto\Qanto_3.woff" />
+    <Content Include="assets\fonts\qanto\Qanto_3.woff2" />
+    <Content Include="assets\fonts\summernote.eot" />
+    <Content Include="assets\fonts\summernote.ttf" />
+    <Content Include="assets\fonts\summernote.woff" />
+    <Content Include="assets\php\mail.php" />
+    <Content Include="assets\scss\helper.scss" />
+    <Content Include="assets\scss\style.scss" />
+    <Content Include="assets\scss\_about.scss" />
+    <Content Include="assets\scss\_blog.scss" />
+    <Content Include="assets\scss\_checkout.scss" />
+    <Content Include="assets\scss\_comment.scss" />
+    <Content Include="assets\scss\_common.scss" />
+    <Content Include="assets\scss\_contact.scss" />
+    <Content Include="assets\scss\_download.scss" />
+    <Content Include="assets\scss\_feature.scss" />
+    <Content Include="assets\scss\_footer.scss" />
+    <Content Include="assets\scss\_forum.scss" />
+    <Content Include="assets\scss\_gallery.scss" />
+    <Content Include="assets\scss\_game.scss" />
+    <Content Include="assets\scss\_header.scss" />
+    <Content Include="assets\scss\_hero.scss" />
+    <Content Include="assets\scss\_install.scss" />
+    <Content Include="assets\scss\_login.scss" />
+    <Content Include="assets\scss\_newslatter.scss" />
+    <Content Include="assets\scss\_review.scss" />
+    <Content Include="assets\scss\_sidebar.scss" />
+    <Content Include="assets\scss\_testimonial.scss" />
+    <Content Include="assets\scss\_variabls.scss" />
+    <Content Include="assets\scss\_video.scss" />
+    <EntityDeploy Include="Models\GilBardDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GilBardDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\GilBardDB.edmx.diagram">
+      <DependentUpon>GilBardDB.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\GameDetail.cshtml" />
+    <Content Include="Views\Home\Games.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>36527</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44309/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
